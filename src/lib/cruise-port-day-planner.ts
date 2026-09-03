@@ -26,7 +26,7 @@ export type CruisePortDayPlannerConfig = {
 
 export const eidfjordPortDayPlannerConfig: CruisePortDayPlannerConfig = {
   portName: "Eidfjord",
-  heading: "Eidfjord Cruise Smart Planner™",
+  heading: "Eidfjord port-day planner",
   subtitle: "Plan your shore excursions around your actual time in port.",
   supportingCopy: "Built specifically for cruise passengers visiting Eidfjord.",
   returnBufferNote:
@@ -47,14 +47,14 @@ export const eidfjordPortDayPlannerConfig: CruisePortDayPlannerConfig = {
       dayPlan: [
         "Disembark promptly and stay within the compact Eidfjord village area",
         "Walk the harbour waterfront and enjoy Hardangerfjord views",
-        "Skip Vøringsfossen and Hardangervidda — not enough margin on mountain roads",
+        "Skip Vøringsfossen and Hardangervidda, not enough margin on mountain roads",
         "Be back at the gangway by your recommended return time",
       ],
     },
     {
       minHours: 4,
       maxHours: 6,
-      label: "4–6 hours",
+      label: "4 to 6 hours",
       confidenceScore: 65,
       confidenceLabel: "Short but Usable Port Call",
       confidenceMessage:
@@ -79,11 +79,11 @@ export const eidfjordPortDayPlannerConfig: CruisePortDayPlannerConfig = {
     {
       minHours: 6,
       maxHours: 8,
-      label: "6–8 hours",
+      label: "6 to 8 hours",
       confidenceScore: 90,
       confidenceLabel: "Strong Port Call",
       confidenceMessage:
-        "Enough time for Best of Eidfjord Sightseeing or Hardangervidda Nature Centre and Scenic Valley Tour.",
+        "Enough time for Best of Eidfjord Sightseeing or Hardangervidda Nature Centre and Scenic Valley Tour. Hours alone do not prove both will fit as separate outings.",
       excursions: [
         {
           label: "Best of Eidfjord Sightseeing",
@@ -108,9 +108,9 @@ export const eidfjordPortDayPlannerConfig: CruisePortDayPlannerConfig = {
       confidenceScore: 95,
       confidenceLabel: "Excellent Full Day",
       confidenceMessage:
-        "Ideal for private sightseeing, Vøringsfossen viewpoints, and relaxed Eidfjord village time.",
+        "A long call still does not prove Vøringsfossen and the Nature Centre will both fit as separate outings. Confirm each plan separately and keep the last hour near the pier.",
       conversionNote:
-        "Most cruise passengers with 8+ hours in Eidfjord combine the Private Best of Eidfjord tour with Vøringsfossen viewpoints and unhurried harbour time.",
+        "Treat stacking waterfall and Nature Centre as a stretch, not a default. Hours ashore cannot prove centre hours or coach operation.",
       excursions: [
         {
           label: "Private Best of Eidfjord Sightseeing",

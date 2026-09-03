@@ -10,7 +10,7 @@ import { buildItemListSchema } from "@/lib/site-schema";
 import { imageAlts, siteImages } from "@/lib/site-images";
 
 const pageMeta = {
-  title: "Eidfjord Excursions — All Shore Tours for Cruise Passengers",
+  title: "Eidfjord Excursions, All Shore Tours for Cruise Passengers",
   description:
     "Browse all Eidfjord shore excursions for cruise passengers: Best of Eidfjord Sightseeing, private tours, Vøringsfossen waterfall viewpoints, and Hardangervidda Nature Centre experiences.",
   path: "/excursions",
@@ -40,12 +40,12 @@ const faqs = [
   {
     question: "How do I choose between Eidfjord shore excursions?",
     answer:
-      "Match the tour to your hours ashore: village time suits under-four-hour calls; Best of Eidfjord and Vøringsfossen tours suit 4–6 hours; Best of Eidfjord or Hardangervidda Nature Centre suit 6–8 hours; private tours need 8+ hours. Use the Cruise Smart Planner on the homepage.",
+      "Match the tour to your hours ashore: village time suits under-four-hour calls; Best of Eidfjord and Vøringsfossen tours suit 4–6 hours; Best of Eidfjord or Hardangervidda Nature Centre suit 6–8 hours; private tours need 8+ hours. Use the port-day planner on the homepage.",
   },
   {
     question: "Do all Eidfjord excursions depart near the cruise port?",
     answer:
-      "Yes. Featured tours meet in Eidfjord village centre near the cruise pier — typically within a few minutes of where you come ashore.",
+      "Yes. Featured tours meet in Eidfjord village centre near the cruise pier, typically within a few minutes of where you come ashore.",
   },
 ] as const;
 
@@ -55,7 +55,7 @@ export default function ExcursionsIndexPage() {
       <JsonLd data={[buildItemListSchema(eidfjordTourListItems)]} />
       <ContentPage
         title="Eidfjord Excursions"
-        lead="Every cruise-friendly shore excursion in Eidfjord — Vøringsfossen waterfall, Hardangervidda Nature Centre, private sightseeing, and scenic valley touring — with return-to-ship timing in mind."
+        lead="Every cruise-friendly shore excursion in Eidfjord, Vøringsfossen waterfall, Hardangervidda Nature Centre, private sightseeing, and scenic valley touring, with return-to-ship timing in mind."
         heroImage={pageMeta.ogImage}
         heroImageAlt={pageMeta.ogImageAlt}
         pagePath={pageMeta.path}
@@ -64,9 +64,9 @@ export default function ExcursionsIndexPage() {
         relatedLinks={relatedLinks}
         faqs={faqs}
         ctaTitle="Need help choosing an Eidfjord tour?"
-        ctaText="Use the Cruise Smart Planner on the homepage to match tours to your ship's timetable."
+        ctaText="Use the port-day planner on the homepage to match tours to your ship's timetable."
         ctaHref="/#planner"
-        ctaButtonLabel="Open Cruise Smart Planner"
+        ctaButtonLabel="Open port-day planner"
         belowHero={
           <section className="border-b bg-surface-muted">
             <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
@@ -97,7 +97,7 @@ export default function ExcursionsIndexPage() {
           </p>
           <p>
             For port-day planning tools and tier-based recommendations, use the{" "}
-            <Link href="/#planner">Cruise Smart Planner</Link> on the homepage.
+            <Link href="/#planner">port-day planner</Link> on the homepage.
           </p>
         </section>
       </ContentPage>

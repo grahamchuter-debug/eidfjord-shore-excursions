@@ -73,14 +73,14 @@ export function ExcursionDetailPage({ excursion }: ExcursionDetailPageProps) {
           <p
             className={`${excursion.heroBadge ? "mt-3" : "mt-5"} badge-accent-red inline-flex rounded-full px-4 py-1.5 text-xs font-medium text-white/95 backdrop-blur-sm sm:text-sm`}
           >
-            Return to ship on time — cruise passenger friendly
+            Return to ship on time, cruise passenger friendly
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={excursion.bookingHref ?? siteConfig.shoreExcursionsPath}
               className="btn-primary sm:text-base"
             >
-              {excursion.bookingLabel ?? "Book this excursion"}
+              {excursion.bookingLabel ?? "Explore this excursion"}
             </Link>
             <Link
               href={siteConfig.shoreExcursionsPath}
@@ -222,7 +222,7 @@ export function ExcursionDetailPage({ excursion }: ExcursionDetailPageProps) {
                 </Link>{" "}
                 itinerary, and use the{" "}
                 <Link href="/#planner" className="content-link">
-                  Cruise Smart Planner
+                  port-day planner
                 </Link>{" "}
                 to match tours to your hours ashore.
               </p>
@@ -252,18 +252,18 @@ export function ExcursionDetailPage({ excursion }: ExcursionDetailPageProps) {
         <section className="border-y bg-navy text-white">
           <div className="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 sm:py-14">
             <h2 className="text-2xl font-bold sm:text-3xl">
-              {excursion.ctaTitle ?? `Ready to book your ${excursion.title}?`}
+              {excursion.ctaTitle ?? `See notes for ${excursion.title}?`}
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
               {excursion.ctaText ??
-                "Secure your place before port day and explore more cruise-friendly excursions designed around your ship's timetable."}
+                "Read the notes on this page, then compare other cruise-friendly excursions designed around your ship's timetable."}
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 href={excursion.bookingHref ?? siteConfig.shoreExcursionsPath}
                 className="btn-primary sm:px-8 sm:py-3.5 sm:text-base"
               >
-                {excursion.bookingLabel ?? "Book this excursion"}
+                {excursion.bookingLabel ?? "Explore this excursion"}
               </Link>
               <Link
                 href={siteConfig.shoreExcursionsPath}

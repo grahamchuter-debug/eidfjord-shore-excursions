@@ -52,7 +52,7 @@ export const imageAlts = {
   voringsfossenViewpoint:
     "Vøringsfossen waterfall viewed from the Fossli Hotel viewpoint area above Måbødalen",
   harbour:
-    "Eidfjord harbour and waterfront on Hardangerfjord — Eidfjord cruise port, Norway",
+    "Eidfjord harbour and waterfront on Hardangerfjord, Eidfjord cruise port, Norway",
   village:
     "Eidfjord village nestled on Hardangerfjord with mountain scenery behind the cruise-friendly harbour",
   hardangerfjord:
@@ -66,9 +66,9 @@ export const imageAlts = {
   fossliViewpoint:
     "Fossli Hotel viewpoint area overlooking Måbødalen valley on the road to Vøringsfossen",
   portGuide:
-    "Eidfjord cruise port waterfront with Hardangerfjord mountains — port guide for cruise passengers",
+    "Eidfjord cruise port waterfront with Hardangerfjord mountains, port guide for cruise passengers",
   worthVisiting:
-    "Vøringsfossen waterfall and Hardanger scenery — why Eidfjord is worth visiting on a Norway cruise",
+    "Vøringsfossen waterfall and Hardanger scenery, why Eidfjord is worth visiting on a Norway cruise",
   bestOfTourCard:
     "Best of Eidfjord sightseeing tour with Vøringsfossen waterfall and Hardangervidda Nature Centre",
   privateBestOfTourCard:
@@ -78,14 +78,14 @@ export const imageAlts = {
   hardangerviddaTourCard:
     "Hardangervidda Nature Centre and Måbødalen valley on a scenic Eidfjord shore excursion",
   flamPortCard:
-    "Flam harbour with cruise ship at the pier — Flam Shore Excursions",
-  bergenPortCard: "Bergen harbour and waterfront — Bergen Shore Excursions",
+    "Flam harbour with cruise ship at the pier, Flam Shore Excursions",
+  bergenPortCard: "Bergen harbour and waterfront, Bergen Shore Excursions",
   stavangerPortCard:
-    "Stavanger harbour with cruise-friendly waterfront — Stavanger Shore Excursions",
+    "Stavanger harbour with cruise-friendly waterfront, Stavanger Shore Excursions",
   alesundPortCard:
-    "Alesund harbour with cruise-friendly waterfront — Alesund Shore Excursions",
+    "Alesund harbour with cruise-friendly waterfront, Alesund Shore Excursions",
   geirangerPortCard:
-    "Geirangerfjord viewpoint with cruise ship — Geiranger Shore Excursions",
+    "Geirangerfjord viewpoint with cruise ship, Geiranger Shore Excursions",
   oldenPortCard:
-    "Briksdal Glacier and Nordfjord scenery — Olden Shore Excursions",
+    "Briksdal Glacier and Nordfjord scenery, Olden Shore Excursions",
 } as const;

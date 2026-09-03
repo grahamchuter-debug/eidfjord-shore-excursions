@@ -6,7 +6,7 @@ export const voringsfossenWaterfallExcursion: ExcursionData = {
   path: "/excursions/voringsfossen-waterfall",
   title: "Vøringsfossen Waterfall Viewpoint Tour",
   headline: "Vøringsfossen Waterfall Viewpoint Tour for Cruise Passengers",
-  lead: "Norway waterfall scenery with dramatic viewpoints, photography stops, weather and visibility advice, and cruise-friendly timing — the SEO-focused Vøringsfossen shore excursion from Eidfjord.",
+  lead: "Norway waterfall scenery with dramatic viewpoints, photography stops, weather and visibility advice, and cruise-friendly timing, the SEO-focused Vøringsfossen shore excursion from Eidfjord.",
   metaTitle: "Vøringsfossen Waterfall Viewpoint Tour for Cruise Passengers",
   metaDescription:
     "Vøringsfossen waterfall shore excursion from Eidfjord with dramatic viewpoints, photography stops, weather advice, and cruise-friendly timing for Norway cruise passengers.",
@@ -22,7 +22,7 @@ export const voringsfossenWaterfallExcursion: ExcursionData = {
   },
   snapshotCards: [
     { label: "Highlights", value: "Vøringsfossen, Fossli viewpoints, Måbødalen" },
-    { label: "Fitness level", value: "Easy — short walks at viewpoints" },
+    { label: "Fitness level", value: "Easy, short walks at viewpoints" },
     { label: "Port call fit", value: "Ideal for 4–8 hour visits" },
     { label: "Scenery", value: "Dramatic Norway waterfall canyon" },
   ],
@@ -41,9 +41,9 @@ export const voringsfossenWaterfallExcursion: ExcursionData = {
     "Cruise-friendly timing with return-to-ship margin",
   ],
   description: [
-    "Vøringsfossen plunges 182 metres into Måbødalen — one of Norway's most photographed waterfalls and the defining sight of an Eidfjord cruise call. This focused tour prioritises waterfall viewpoints, photography time, and practical advice on weather and visibility.",
-    "The drive from Eidfjord follows the Eio River through the steep Måbødalen canyon before reaching Fossli Hotel viewpoint stops. Guides explain how seasonal flow, mist, and cloud cover affect what you see — helping you make the most of whatever conditions greet you.",
-    "Compared with the broader Best of Eidfjord Sightseeing tour, this excursion spends more time at waterfall viewpoints and less at Hardangervidda Nature Centre — making it the right choice when Vøringsfossen is your primary goal ashore.",
+    "Vøringsfossen plunges 182 metres into Måbødalen, one of Norway's most photographed waterfalls and the defining sight of an Eidfjord cruise call. This focused tour prioritises waterfall viewpoints, photography time, and practical advice on weather and visibility.",
+    "The drive from Eidfjord follows the Eio River through the steep Måbødalen canyon before reaching Fossli Hotel viewpoint stops. Guides explain how seasonal flow, mist, and cloud cover affect what you see, helping you make the most of whatever conditions greet you.",
+    "Compared with the broader Best of Eidfjord Sightseeing tour, this excursion spends more time at waterfall viewpoints and less at Hardangervidda Nature Centre, making it the right choice when Vøringsfossen is your primary goal ashore.",
   ],
   included: [
     "Guided Vøringsfossen waterfall viewpoint tour",
@@ -59,8 +59,8 @@ export const voringsfossenWaterfallExcursion: ExcursionData = {
   ],
   timingAdvice: [
     "Best suited to port calls of four hours or more.",
-    "Morning light can improve photography — disembark promptly when possible.",
-    "Mist and cloud are common — waterproof layers and realistic expectations help.",
+    "Morning light can improve photography, disembark promptly when possible.",
+    "Mist and cloud are common, waterproof layers and realistic expectations help.",
     "Keep 30–45 minutes before all aboard to reach the cruise pier.",
   ],
   faqs: [
@@ -102,8 +102,8 @@ export const voringsfossenWaterfallExcursion: ExcursionData = {
     { label: "Eidfjord port guide", href: "/eidfjord-port-guide" },
   ],
   bookingHref: "/excursions",
-  bookingLabel: "Book this excursion",
-  ctaTitle: "Ready to book your Vøringsfossen Waterfall tour?",
+  bookingLabel: "Explore this excursion",
+  ctaTitle: "Read the Vøringsfossen notes, then compare other Eidfjord options",
   ctaText:
     "See Norway's famous Vøringsfossen waterfall with dramatic viewpoints and cruise-friendly timing.",
 };

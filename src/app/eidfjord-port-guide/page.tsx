@@ -32,17 +32,17 @@ const faqs = [
   {
     question: "Does Eidfjord have a cruise pier or is it a tender port?",
     answer:
-      "Most cruise ships dock at the Eidfjord cruise pier in the village centre. Some larger vessels may use tender boats — confirm your ship's arrangement on the cruise app the night before arrival.",
+      "Most cruise ships dock at the Eidfjord cruise pier in the village centre. Some larger vessels may use tender boats, confirm your ship's arrangement on the cruise app the night before arrival.",
   },
   {
     question: "How far is the Eidfjord cruise port from the village centre?",
     answer:
-      "The village is compact — the cruise pier is within walking distance of shops, cafés, and excursion meeting points, typically 2–5 minutes on foot.",
+      "The village is compact, the cruise pier is within walking distance of shops, cafés, and excursion meeting points, typically 2–5 minutes on foot.",
   },
   {
     question: "How long does it take to reach Vøringsfossen from Eidfjord?",
     answer:
-      "Vøringsfossen is approximately 20 km via Måbødalen valley. Allow roughly 30–45 minutes each way by coach, plus time at viewpoints — plan for a three-to-four-hour excursion minimum.",
+      "Vøringsfossen is approximately 20 km via Måbødalen valley. Allow roughly 30–45 minutes each way by coach, plus time at viewpoints, plan for a three-to-four-hour excursion minimum.",
   },
   {
     question: "How early should cruise passengers return to the ship in Eidfjord?",
@@ -55,7 +55,7 @@ export default function EidfjordPortGuidePage() {
   return (
     <ContentPage
       title="Eidfjord Port Guide for Cruise Passengers"
-      lead="Everything you need to navigate Eidfjord cruise port — pier and tender access, walking distances, Vøringsfossen travel, Hardangervidda timing, weather advice, and return-to-ship buffer guidance."
+      lead="Everything you need to navigate Eidfjord cruise port, pier and tender access, walking distances, Vøringsfossen travel, Hardangervidda timing, weather advice, and return-to-ship buffer guidance."
       heroImage={pageMeta.ogImage}
       heroImageAlt={pageMeta.ogImageAlt}
       pagePath={pageMeta.path}
@@ -70,7 +70,7 @@ export default function EidfjordPortGuidePage() {
           Eidfjord is primarily a dock port. Most cruise ships berth at the village
           pier with immediate access to the harbour and Hardangerfjord waterfront.
           On occasional busy days or for very large vessels, tender boats may
-          transfer passengers ashore — check your cruise line&apos;s app for
+          transfer passengers ashore, check your cruise line&apos;s app for
           your specific arrangement.
         </p>
         <p>
@@ -96,12 +96,12 @@ export default function EidfjordPortGuidePage() {
             near the harbour within minutes of the gangway
           </li>
           <li>
-            <strong>Vøringsfossen waterfall:</strong> 20 km by road — coach
+            <strong>Vøringsfossen waterfall:</strong> 20 km by road, coach
             excursion only, not walkable
           </li>
           <li>
             <strong>Hardangervidda Nature Centre:</strong> reached by road via
-            Måbødalen — coach or minibus required
+            Måbødalen, coach or minibus required
           </li>
         </ul>
       </section>
@@ -111,14 +111,14 @@ export default function EidfjordPortGuidePage() {
         <p>
           Vøringsfossen lies at the top of Måbødalen valley, reached by Norwegian
           National Road 7 through dramatic canyon scenery. Coach and minibus tours
-          are the practical route — do not rely on taxis without a pre-arranged
+          are the practical route, do not rely on taxis without a pre-arranged
           booking. Allow approximately three to four hours for a round-trip
           waterfall excursion including time at Fossli Hotel viewpoints.
         </p>
         <p>
           The final approach includes short walks at viewpoint platforms depending
           on the operator and season. Wear sturdy shoes and pack a waterproof
-          layer — valley weather and mist change quickly.
+          layer, valley weather and mist change quickly.
         </p>
       </section>
 
@@ -127,7 +127,7 @@ export default function EidfjordPortGuidePage() {
         <p>
           Hardangervidda Nature Centre sits at the gateway to Europe&apos;s largest
           mountain plateau. Most shore excursions include transport and centre
-          entry. Allow time for exhibits and optional short walks — centre hours
+          entry. Allow time for exhibits and optional short walks, centre hours
           may vary seasonally.
         </p>
         <p>
@@ -151,11 +151,11 @@ export default function EidfjordPortGuidePage() {
         <h2>Return-to-ship buffer advice</h2>
         <ul>
           <li>Aim to be at the cruise pier 30–45 minutes before all aboard</li>
-          <li>Pre-book Vøringsfossen tours on multi-ship days</li>
+          <li>Arrange Vøringsfossen tours early on multi-ship days where you can</li>
           <li>Monitor your cruise app for timetable updates throughout the day</li>
           <li>
             Use the{" "}
-            <Link href="/#planner">Cruise Smart Planner</Link> to match
+            <Link href="/#planner">port-day planner</Link> to match
             activities to your hours ashore
           </li>
           <li>

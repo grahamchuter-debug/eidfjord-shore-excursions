@@ -6,7 +6,7 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
   path: "/excursions/best-of-eidfjord-sightseeing",
   title: "Best of Eidfjord Sightseeing",
   headline: "Best of Eidfjord Sightseeing for Cruise Passengers",
-  lead: "The headline Eidfjord shore excursion — a guided journey to Vøringsfossen waterfall, Hardangervidda Nature Centre, Måbødalen valley, and Eio River scenery with timings designed for your ship's schedule.",
+  lead: "The headline Eidfjord shore excursion, a guided journey to Vøringsfossen waterfall, Hardangervidda Nature Centre, Måbødalen valley, and Eio River scenery with timings designed for your ship's schedule.",
   metaTitle: "Best of Eidfjord Sightseeing for Cruise Passengers",
   metaDescription:
     "Headline Eidfjord shore excursion to Vøringsfossen waterfall, Hardangervidda Nature Centre, Måbødalen valley, and Fossli Hotel viewpoints. Approx. 3 hours 30 minutes. Easy activity level.",
@@ -22,7 +22,7 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
   },
   snapshotCards: [
     { label: "Highlights", value: "Vøringsfossen, Hardangervidda, Måbødalen" },
-    { label: "Fitness level", value: "Easy — short walks at viewpoints" },
+    { label: "Fitness level", value: "Easy, short walks at viewpoints" },
     { label: "Port call fit", value: "Ideal for 4–8 hour visits" },
     { label: "Scenery", value: "Waterfall, plateau, and fjord landscapes" },
   ],
@@ -33,7 +33,7 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
     { src: siteImages.harbour, alt: imageAlts.harbour },
   ],
   highlights: [
-    "Vøringsfossen waterfall — one of Norway's most famous cascades",
+    "Vøringsfossen waterfall, one of Norway's most famous cascades",
     "Hardangervidda Nature Centre with mountain plateau context",
     "Eio River scenery along the scenic Måbødalen route",
     "Måbødalen valley with dramatic canyon walls",
@@ -43,7 +43,7 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
   description: [
     "Vøringsfossen is the reason most cruise passengers choose to go ashore in Eidfjord. This sightseeing tour combines the waterfall viewpoints, Hardangervidda Nature Centre, and the dramatic Måbødalen valley in one carefully timed shore excursion.",
     "The scenic drive from Eidfjord pier follows the Eio River through Måbødalen before reaching Fossli Hotel viewpoint stops and Hardangervidda Nature Centre. Short walks lead to photography points where you can see the waterfall, the canyon, and the surrounding Hardangerfjord mountains.",
-    "Designed for cruise passengers, the tour accounts for typical port windows and return-to-ship requirements. You spend your hours ashore on waterfall and mountain scenery rather than in unnecessary transfers — making this the signature choice when you have four or more hours in Eidfjord.",
+    "Designed for cruise passengers, the tour accounts for typical port windows and return-to-ship requirements. You spend your hours ashore on waterfall and mountain scenery rather than in unnecessary transfers, making this the signature choice when you have four or more hours in Eidfjord.",
   ],
   included: [
     "Guided Best of Eidfjord sightseeing tour",
@@ -59,9 +59,9 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
   ],
   timingAdvice: [
     "Best suited to port calls of four hours or more.",
-    "Disembark promptly — Vøringsfossen tours fill on multi-ship days.",
+    "Disembark promptly, Vøringsfossen tours fill on multi-ship days.",
     "Keep 30–45 minutes before all aboard to reach the cruise pier.",
-    "Weather can affect visibility at the waterfall — pack a waterproof layer.",
+    "Weather can affect visibility at the waterfall, pack a waterproof layer.",
   ],
   faqs: [
     {
@@ -102,8 +102,8 @@ export const bestOfEidfjordSightseeingExcursion: ExcursionData = {
     { label: "One day in Eidfjord", href: "/one-day-in-eidfjord" },
   ],
   bookingHref: "/excursions",
-  bookingLabel: "Book this excursion",
-  ctaTitle: "Ready to book your Best of Eidfjord Sightseeing tour?",
+  bookingLabel: "Explore this excursion",
+  ctaTitle: "Read the Best of Eidfjord notes, then compare other options",
   ctaText:
     "Experience Vøringsfossen waterfall, Hardangervidda Nature Centre, and dramatic Hardangerfjord scenery.",
 };

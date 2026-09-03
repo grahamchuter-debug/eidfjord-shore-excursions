@@ -26,17 +26,17 @@ const faqs = [
   {
     question: "What can cruise passengers do in Eidfjord with only four hours ashore?",
     answer:
-      "Focus on an Eidfjord village walk and short harbour viewpoints on Hardangerfjord. Skip Vøringsfossen and Hardangervidda — they need more time than a four-hour window allows comfortably.",
+      "Focus on an Eidfjord village walk and short harbour viewpoints on Hardangerfjord. Skip Vøringsfossen and Hardangervidda, they need more time than a four-hour window allows comfortably.",
   },
   {
     question: "Can I visit Vøringsfossen and Hardangervidda Nature Centre in one Eidfjord day?",
     answer:
-      "On six-to-eight-hour port calls, the Best of Eidfjord Sightseeing tour combines both. On shorter calls, choose one focused excursion or stay in the village.",
+      "On longer calls, some Best of Eidfjord sightseeing shapes include both stops when the operator confirms them. Ship hours alone cannot prove a separate waterfall outing plus Nature Centre will fit. On shorter calls, choose one focused excursion or stay in the village.",
   },
   {
     question: "Should I book Eidfjord excursions before my cruise arrives?",
     answer:
-      "Pre-booking is strongly recommended on peak summer days. Popular Vøringsfossen and Best of Eidfjord tours sell out when several ships share the port.",
+      "Arranging popular outings ahead of peak summer days is often wise. Tours can be busy when several ships share the port, so check availability early rather than assuming a walk-up place.",
   },
   {
     question: "How much buffer time should I leave before all aboard?",
@@ -49,7 +49,7 @@ export default function OneDayInEidfjordPage() {
   return (
     <ContentPage
       title="One Day in Eidfjord"
-      lead="Practical sample itineraries for cruise passengers with 4, 6, or 8+ hours in Eidfjord — focused on Vøringsfossen waterfall, Hardangervidda Nature Centre, and village time with realistic return-to-ship timing."
+      lead="Practical sample itineraries for cruise passengers with 4, 6, or 8+ hours in Eidfjord, focused on Vøringsfossen waterfall, Hardangervidda Nature Centre, and village time with realistic return-to-ship timing."
       heroImage={pageMeta.ogImage}
       heroImageAlt={pageMeta.ogImageAlt}
       pagePath={pageMeta.path}
@@ -74,7 +74,7 @@ export default function OneDayInEidfjordPage() {
           With under four hours ashore, stay in Eidfjord village. Walk the
           harbour waterfront, enjoy Hardangerfjord views, browse local shops,
           and photograph the mountain backdrop. Skip Vøringsfossen and
-          Hardangervidda tours — Måbødalen road time exceeds what a four-hour
+          Hardangervidda tours, Måbødalen road time exceeds what a four-hour
           window allows with a safe return margin.
         </p>
       </section>
@@ -107,8 +107,9 @@ export default function OneDayInEidfjordPage() {
           <Link href="/excursions/hardangervidda-nature-centre">
             Hardangervidda Nature Centre and Scenic Valley Tour
           </Link>{" "}
-          fits comfortably. Add a short village walk or harbour coffee if your
-          tour returns with margin to spare.
+          can be a realistic main outing when tickets and timing are confirmed.
+          Add a short village walk or harbour coffee only if your tour returns
+          with margin to spare.
         </p>
       </section>
 
@@ -126,10 +127,10 @@ export default function OneDayInEidfjordPage() {
       </section>
 
       <section>
-        <h2>Use the Cruise Smart Planner</h2>
+        <h2>Use the port-day planner</h2>
         <p>
           Enter your ship&apos;s arrival and departure times on the{" "}
-          <Link href="/#planner">Eidfjord Cruise Smart Planner</Link> for
+          <Link href="/#planner">Eidfjord port-day planner</Link> for
           tier-based excursion recommendations and return-to-ship guidance
           tailored to your actual hours ashore.
         </p>

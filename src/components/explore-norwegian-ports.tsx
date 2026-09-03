@@ -170,8 +170,8 @@ export const explorePortsFromEidfjord: ExploreNorwegianPortsConfig = {
         className="font-medium text-[var(--norway-blue)] underline-offset-2 hover:underline"
       >
         Olden Shore Excursions
-      </a>{" "}
-      — each with port guides, tour comparisons, and Cruise Smart Planners built
+      </a>
+      , each with port guides, tour comparisons, and port-day planners built
       for passengers on the same sailing.
     </>
   ),

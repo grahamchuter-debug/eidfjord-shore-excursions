@@ -53,9 +53,9 @@ export function ContentPage({
   breadcrumbs,
   belowHero,
   ctaTitle = "Plan your Eidfjord shore excursion",
-  ctaText = "Browse cruise-friendly tours designed around your ship's time in port, with enough margin to return before all aboard.",
+  ctaText = "Compare waterfall, sightseeing and Nature Centre ideas against your hours ashore, then keep a clear walk back to the pier.",
   ctaHref = siteConfig.shoreExcursionsPath,
-  ctaButtonLabel = "View Eidfjord shore excursions",
+  ctaButtonLabel = "Explore Eidfjord excursions",
   showShipReassurance = true,
   relatedSectionTitle = "Related Eidfjord guides",
 }: ContentPageProps) {
@@ -84,7 +84,7 @@ export function ContentPage({
           </p>
           {showShipReassurance ? (
             <p className="badge-accent-red mt-5 inline-flex rounded-full px-4 py-1.5 text-xs font-medium text-white/95 backdrop-blur-sm sm:text-sm">
-              Return to ship on time — cruise passenger friendly
+              Return to ship on time, cruise passenger friendly
             </p>
           ) : null}
         </PageHero>

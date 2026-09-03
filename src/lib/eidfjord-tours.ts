@@ -16,7 +16,7 @@ export const eidfjordTourCards: readonly EidfjordTourCard[] = [
     imageAlt: imageAlts.bestOfTourCard,
     title: "Best of Eidfjord Sightseeing",
     description:
-      "Headline Eidfjord shore excursion to Vøringsfossen waterfall, Hardangervidda Nature Centre, Måbødalen valley, and Eio River scenery — best for first-time visitors.",
+      "Headline Eidfjord shore excursion to Vøringsfossen waterfall, Hardangervidda Nature Centre, Måbødalen valley, and Eio River scenery, best for first-time visitors.",
     badge: "Headline Tour",
   },
   {

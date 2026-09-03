@@ -41,12 +41,12 @@ const faqs = [
   {
     question: "When is Eidfjord busiest for cruise passengers?",
     answer:
-      "July and early August see peak cruise traffic. Pre-book Vøringsfossen and Best of Eidfjord tours and disembark early on multi-ship days.",
+      "July and early August see peak cruise traffic. Arrange Vøringsfossen and Best of Eidfjord tours early where you can, and disembark promptly on multi-ship days.",
   },
   {
     question: "Is Eidfjord weather predictable in summer?",
     answer:
-      "No — Hardangerfjord and Måbødalen weather change quickly. Summer days can be clear and mild or misty and wet within hours. Pack waterproof layers regardless of forecast.",
+      "No, Hardangerfjord and Måbødalen weather change quickly. Summer days can be clear and mild or misty and wet within hours. Pack waterproof layers regardless of forecast.",
   },
 ] as const;
 
@@ -54,7 +54,7 @@ export default function BestTimeToVisitEidfjordPage() {
   return (
     <ContentPage
       title="Best Time to Visit Eidfjord"
-      lead="Seasonal advice for cruise passengers calling at Eidfjord — when Vøringsfossen is at its best, how Hardangervidda access varies, and what to expect from weather and crowds across the Norway cruise season."
+      lead="Seasonal advice for cruise passengers calling at Eidfjord, when Vøringsfossen is at its best, how Hardangervidda access varies, and what to expect from weather and crowds across the Norway cruise season."
       heroImage={pageMeta.ogImage}
       heroImageAlt={pageMeta.ogImageAlt}
       pagePath={pageMeta.path}
@@ -69,11 +69,11 @@ export default function BestTimeToVisitEidfjordPage() {
           Most Norway cruise itineraries call at Eidfjord between June and
           August. Long daylight hours, full excursion schedules, and accessible
           Hardangervidda Nature Centre make this the default best time for
-          first-time visitors. Expect peak crowds in July — pre-book{" "}
+          first-time visitors. Expect peak crowds in July. Arrange{" "}
           <Link href="/excursions/best-of-eidfjord-sightseeing">
             Best of Eidfjord Sightseeing
           </Link>{" "}
-          and Vøringsfossen tours.
+          and Vøringsfossen tours early where possible.
         </p>
       </section>
 
@@ -82,7 +82,7 @@ export default function BestTimeToVisitEidfjordPage() {
         <p>
           Shoulder months offer fewer ships and softer light for photography,
           but cooler temperatures and more frequent mist at waterfall viewpoints.
-          Excursions generally still operate — confirm centre hours and tour
+          Excursions generally still operate, confirm centre hours and tour
           availability when booking early-season sailings.
         </p>
       </section>
@@ -90,7 +90,7 @@ export default function BestTimeToVisitEidfjordPage() {
       <section>
         <h2>Weather at Vøringsfossen and Hardangervidda</h2>
         <p>
-          Måbødalen canyon traps moisture — mist and cloud are common even on
+          Måbødalen canyon traps moisture, mist and cloud are common even on
           summer days. Clear conditions deliver spectacular waterfall panoramas;
           overcast skies can limit visibility but still produce atmospheric
           photography. Hardangervidda plateau routes may see snow lingering into
@@ -120,7 +120,7 @@ export default function BestTimeToVisitEidfjordPage() {
         <h2>Match timing to your port call</h2>
         <p>
           Season matters less than your hours ashore. Use the{" "}
-          <Link href="/#planner">Eidfjord Cruise Smart Planner</Link> to see
+          <Link href="/#planner">Eidfjord port-day planner</Link> to see
           which excursions fit your ship&apos;s schedule regardless of month.
         </p>
       </section>

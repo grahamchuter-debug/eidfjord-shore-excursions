@@ -2,18 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CruisePortDayPlanner } from "@/components/cruise-port-day-planner";
-import {
-  ExploreNorwegianPorts,
-  explorePortsFromEidfjord,
-} from "@/components/explore-norwegian-ports";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { TourCard } from "@/components/tour-card";
+import {
+  eidfjordScheduleIntegrity,
+  formatScheduleDate,
+} from "@/lib/eidfjord-schedules";
 import { eidfjordTourCards, eidfjordTourListItems } from "@/lib/eidfjord-tours";
-import { buildPageMetadata } from "@/lib/site-metadata";
-import { buildFaqSchema, buildItemListSchema, buildWebPageSchema } from "@/lib/site-schema";
-import { imageAlts, siteImages } from "@/lib/site-images";
 import { siteConfig } from "@/lib/site-config";
+import { imageAlts, siteImages } from "@/lib/site-images";
+import { buildPageMetadata } from "@/lib/site-metadata";
+import {
+  buildFaqSchema,
+  buildItemListSchema,
+  buildWebPageSchema,
+} from "@/lib/site-schema";
 
 const pageMeta = {
   title:
@@ -30,43 +34,39 @@ export const metadata: Metadata = buildPageMetadata({
   absoluteTitle: true,
 });
 
-const trustBadges = [
-  { label: "Return to ship on time", accent: true },
-  { label: "Waterfall scenery", accent: false },
-  { label: "Cruise passenger friendly", accent: false },
-] as const;
-
-const popularTours = eidfjordTourListItems;
-
 const homeFaqs = [
   {
-    question: "Is Eidfjord worth visiting from a cruise ship?",
+    question: "Is this site for cruise passengers calling at Eidfjord?",
     answer:
-      "Yes — Eidfjord is one of Norway's most scenic Hardangerfjord ports, with Vøringsfossen waterfall, Hardangervidda mountain scenery, and dramatic Måbødalen valley views. Most passengers find it a highlight of their Norway cruise itinerary.",
+      "Yes. This is an independent Eidfjord cruise-port planning site. It helps you choose between a focused waterfall outing, broader Best of Eidfjord sightseeing, Hardangervidda Nature Centre, or staying local, check published ship calls, and leave a return buffer. Confirm final timings with your cruise line.",
   },
   {
-    question: "How long should I spend in Eidfjord?",
+    question: "Should I go to Vøringsfossen, the Nature Centre, or stay in Eidfjord?",
     answer:
-      "Four hours allows a village walk or short harbour viewpoints. Six to eight hours unlocks Best of Eidfjord Sightseeing or Hardangervidda Nature Centre tours. Eight or more hours enables private sightseeing and relaxed waterfall touring.",
+      "Stay in the village on a short call. Vøringsfossen is the waterfall-focused outing already described on this site. Best of Eidfjord is the broader sightseeing shape. Hardangervidda Nature Centre is more interpretation and plateau context. Pick one main outing unless tickets and timing are already confirmed.",
   },
   {
-    question: "Can I visit Vøringsfossen waterfall from Eidfjord cruise port?",
+    question: "Can I do Vøringsfossen and the Nature Centre because my ship stays all day?",
     answer:
-      "Yes. Vøringsfossen is the headline shore excursion from Eidfjord, reached by a scenic drive through Måbødalen valley. Most tours include Fossli Hotel viewpoint stops and waterfall photography with cruise-friendly timings.",
+      "Published hours ashore are not enough. Combining them needs confirmed tickets and a generous buffer. This site does not invent current centre hours or coach operation.",
   },
   {
-    question: "What is the best Eidfjord shore excursion?",
+    question: "Can I book shore excursions on this site?",
     answer:
-      "The Best of Eidfjord Sightseeing tour is the headline choice for first-time visitors with four or more hours ashore. For shorter calls, focus on Eidfjord village walks and harbour viewpoints.",
-  },
-  {
-    question: "Is Eidfjord walkable from the cruise port?",
-    answer:
-      "Yes. Eidfjord village is compact and most ships dock at the cruise pier near the harbour. Shops, cafés, and excursion meeting points are within minutes on foot.",
+      "This site is for planning and discovery. There is no live booking checkout here. Use the excursion pages and guides to understand options, then arrange tours through operators or your usual booking channel.",
   },
 ] as const;
 
 export default function Home() {
+  const firstLabel = eidfjordScheduleIntegrity.firstDate
+    ? formatScheduleDate(eidfjordScheduleIntegrity.firstDate)
+    : "";
+  const lastLabel = eidfjordScheduleIntegrity.lastDate
+    ? formatScheduleDate(eidfjordScheduleIntegrity.lastDate)
+    : "";
+  const featured = eidfjordTourCards.slice(0, 3);
+  const remaining = eidfjordTourCards.slice(3);
+
   return (
     <>
       <JsonLd
@@ -76,158 +76,301 @@ export default function Home() {
             title: pageMeta.title,
             description: pageMeta.description,
           }),
-          buildItemListSchema(popularTours),
+          buildItemListSchema(eidfjordTourListItems),
           buildFaqSchema(homeFaqs),
         ]}
       />
-      <main className="min-h-screen bg-white text-slate-900">
+      <main>
         <PageHero
           image={siteImages.hero}
           imageAlt={imageAlts.hero}
-          centered
-          compact
-          overlay="light"
-          className="min-h-[25rem] md:min-h-[31rem] lg:min-h-[34rem]"
+          className="min-h-[28rem] md:min-h-[32rem]"
         >
-          <h1 className="mb-3 text-2xl font-bold text-white sm:mb-5 sm:text-4xl md:text-5xl lg:text-6xl">
-            Eidfjord Shore Excursions
-          </h1>
-
-          <p className="mx-auto mb-5 max-w-3xl text-sm text-white/95 sm:mb-7 sm:text-lg md:text-xl">
-            Discover Vøringsfossen waterfall, Hardangervidda mountain scenery
-            and Hardangerfjord viewpoints with cruise-friendly shore excursions
-            designed around your time in port.
+          <p className="hero-eyebrow mb-3 text-xs font-semibold uppercase tracking-[0.2em]">
+            {siteConfig.name}
           </p>
-
-          <a href="#tours" className="btn-primary px-6 py-3 text-sm sm:px-8 sm:py-4 sm:text-base">
-            View Excursions
-          </a>
-
-          <ul className="mx-auto mt-4 flex max-w-2xl flex-wrap items-center justify-center gap-2 sm:mt-6 sm:gap-3">
-            {trustBadges.map((badge) => (
-              <li
-                key={badge.label}
-                className={`rounded-full px-3 py-1.5 text-xs font-medium text-white/95 backdrop-blur-sm sm:px-4 sm:text-sm ${
-                  badge.accent
-                    ? "badge-accent-red"
-                    : "border border-white/25 bg-white/10"
-                }`}
-              >
-                {badge.label}
-              </li>
-            ))}
-          </ul>
+          <h1 className="font-display mb-5 max-w-4xl text-3xl font-semibold leading-tight text-white sm:text-5xl">
+            Your ship is in Eidfjord. Waterfall, plateau, or stay local?
+          </h1>
+          <p className="max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+            Hardanger mist, canyon spray and plateau light. Choose one main
+            direction, then keep time to get back to the pier.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/excursions"
+              className="btn-primary w-full justify-center sm:w-auto"
+            >
+              Explore Eidfjord excursions
+            </Link>
+            <Link
+              href="/ship-schedule"
+              className="btn-secondary w-full justify-center sm:w-auto"
+            >
+              Check your ship schedule
+            </Link>
+          </div>
         </PageHero>
 
-        <section id="tours" className="border-t bg-surface-muted">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-            <h2 className="mb-2 text-3xl font-bold sm:mb-3 sm:text-4xl">
-              Popular Eidfjord Tours
+        <section className="border-b border-[var(--border-light)] bg-[var(--surface)] py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Three Eidfjord days</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Vøringsfossen focus, Best of Eidfjord, or Nature Centre
             </h2>
-            <p className="mb-4 max-w-2xl text-slate-600">
-              Cruise-friendly excursions that depart near Eidfjord village and fit
-              typical port-day schedules.
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              The inventory on this site already splits that way, with a private
+              option when you want more pace control. No extra decision URL. Use
+              the one-day guide for hours, not as proof that waterfall and
+              centre will combine.
             </p>
-            <p className="mb-8 max-w-2xl rounded-lg border border-slate-200 border-l-[3px] border-l-[var(--norway-red)] bg-white px-4 py-3 text-sm leading-6 text-slate-700">
-              Every excursion featured is selected to fit comfortably within a
-              typical Eidfjord cruise port call.
-            </p>
+            <div className="mt-10 grid gap-10 md:grid-cols-3">
+              <div>
+                <h3 className="font-display text-xl font-semibold text-slate-900">
+                  Vøringsfossen focus
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Canyon viewpoints and waterfall photography when the cascade
+                  is your priority. Confirm the day&apos;s visibility with the
+                  operator.
+                </p>
+                <Link
+                  href="/excursions/voringsfossen-waterfall"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
+                >
+                  Vøringsfossen waterfall tour
+                </Link>
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-slate-900">
+                  Best of Eidfjord
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Broader sightseeing already on this site, including a private
+                  option. Still one main outing, not a guarantee that every stop
+                  will fit.
+                </p>
+                <Link
+                  href="/excursions/best-of-eidfjord-sightseeing"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
+                >
+                  Best of Eidfjord sightseeing
+                </Link>
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-slate-900">
+                  Hardangervidda Nature Centre
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Plateau context and valley scenery when interpretation matters
+                  as much as the cascade. Centre hours depend on the season.
+                  This site does not invent current operation.
+                </p>
+                <Link
+                  href="/excursions/hardangervidda-nature-centre"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
+                >
+                  Nature Centre notes
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {eidfjordTourCards.map((tour) => (
-                <TourCard
-                  key={tour.href}
-                  href={tour.href}
-                  image={tour.image}
-                  imageAlt={tour.imageAlt}
-                  title={tour.title}
-                  description={tour.description}
-                  badge={tour.badge}
-                />
+        <section className="border-b border-[var(--border-light)] bg-surface-muted py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Find your ship</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Check when your ship is in Eidfjord
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              {eidfjordScheduleIntegrity.total} published Eidfjord calls from{" "}
+              {firstLabel} to {lastLabel}. Arrival and departure times shape
+              what is realistic ashore. Always confirm with your cruise line.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/ship-schedule" className="btn-outline-dark">
+                Open Eidfjord ship schedule
+              </Link>
+              <Link
+                href="/one-day-in-eidfjord"
+                className="inline-flex min-h-11 items-center text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
+              >
+                Then plan your hours
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="tours" className="scroll-mt-24 py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Excursion options</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Experiences already on this site
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              No invented products or prices. Durations are approximate. Keep a
+              return buffer. This site does not sell tickets.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {featured.map((tour) => (
+                <TourCard key={tour.href} {...tour} />
               ))}
             </div>
+            {remaining.length > 0 ? (
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {remaining.map((tour) => (
+                  <TourCard key={tour.href} {...tour} />
+                ))}
+              </div>
+            ) : null}
             <p className="mt-8">
               <Link
                 href="/excursions"
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 transition hover:border-[var(--norway-blue)] hover:text-[var(--norway-blue)]"
+                className="text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
               >
-                View all Eidfjord excursions
+                Compare all Eidfjord excursions
               </Link>
             </p>
           </div>
         </section>
 
-        <section id="why-eidfjord" className="border-t bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-            <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-              Why Eidfjord Is Ideal for Cruise Shore Excursions
+        <section className="border-y border-[var(--border-light)] bg-[var(--surface)] py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Waterfall and Nature Centre</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Two stops is a stretch, not a timetable result
             </h2>
-            <p className="text-base leading-8 text-slate-700 sm:text-lg">
-              Eidfjord sits on Hardangerfjord beneath the Hardangervidda mountain
-              plateau. Cruise passengers arrive directly at a compact village pier,
-              then reach Vøringsfossen waterfall, Hardangervidda Nature Centre, and
-              Måbødalen valley viewpoints on shore excursions timed for
-              return-to-ship schedules.
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              Existing one-day notes already treat stacking Vøringsfossen and
+              Hardangervidda Nature Centre as something that needs a long,
+              confirmed day. Ship duration alone cannot prove it. Confirm each
+              outing separately.
             </p>
-            <ul className="mt-6 list-disc space-y-2 pl-5 text-base leading-8 text-slate-700">
-              <li>Vøringsfossen — one of Norway&apos;s most famous waterfalls</li>
-              <li>Hardangervidda Nature Centre with mountain plateau context</li>
-              <li>Måbødalen valley and Eio River scenic driving routes</li>
-              <li>Fossli Hotel viewpoint area above the waterfall canyon</li>
-              <li>Compact village with easy shore access from the cruise pier</li>
-              <li>Match excursions to your actual hours ashore with our Cruise Smart Planner</li>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">First time in Eidfjord</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Useful planning guides
+            </h2>
+            <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  href: "/eidfjord-port-guide",
+                  title: "Cruise port guide",
+                  text: "Village layout from the pier toward waterfall and plateau outings.",
+                },
+                {
+                  href: "/one-day-in-eidfjord",
+                  title: "One day in Eidfjord",
+                  text: "Sample shapes for short, classic and longer port calls.",
+                },
+                {
+                  href: "/is-eidfjord-worth-visiting",
+                  title: "Is Eidfjord worth visiting?",
+                  text: "Honest context if you are deciding how to spend hours ashore.",
+                },
+                {
+                  href: "/best-time-to-visit-eidfjord",
+                  title: "Best time to visit",
+                  text: "Seasonal context for cruise months already published here.",
+                },
+              ].map((item) => (
+                <li
+                  key={item.href}
+                  className="border-t border-[var(--border-light)] pt-5"
+                >
+                  <h3 className="font-display text-lg font-semibold text-slate-900">
+                    <Link
+                      href={item.href}
+                      className="underline-offset-4 hover:underline"
+                    >
+                      {item.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {item.text}
+                  </p>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
 
-        <section id="planner" className="border-t bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-            <CruisePortDayPlanner />
+        <section
+          id="planner"
+          className="scroll-mt-24 border-y border-[var(--border-light)] bg-surface-muted py-14 sm:py-16"
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Port-day planning</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Think in hours, mist and return buffer
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              Use published times as a planning start. This planner helps you
+              think through the day. It does not invent waterfall visibility or
+              Nature Centre hours.
+            </p>
+            <div className="mt-8">
+              <CruisePortDayPlanner />
+            </div>
           </div>
         </section>
 
-        <ExploreNorwegianPorts
-          config={explorePortsFromEidfjord}
-          variant="compact"
-        />
-
-        <section id="faqs" className="border-t bg-surface-muted">
-          <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
-            <h2 className="mb-6 text-2xl font-bold text-slate-900 sm:text-3xl">
-              Eidfjord cruise passenger FAQs
+        <section className="py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <p className="section-eyebrow">Norway beyond Eidfjord</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Planning other Norwegian ports?
             </h2>
-            <dl className="space-y-6">
+            <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+              For multi-port itineraries, the national planning site covers the
+              wider Norway cruise picture.
+            </p>
+            <a
+              href={siteConfig.nationalAuthorityUrl}
+              className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--fjord)] underline-offset-4 hover:underline"
+            >
+              Norway Shore Excursions
+            </a>
+          </div>
+        </section>
+
+        <section className="border-y border-[var(--border-light)] bg-[var(--surface)] py-14 sm:py-16">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            <p className="section-eyebrow">FAQ</p>
+            <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Eidfjord cruise questions
+            </h2>
+            <dl className="mt-8 space-y-6">
               {homeFaqs.map((faq) => (
-                <div
-                  key={faq.question}
-                  className="rounded-lg border border-slate-200 border-l-[3px] border-l-[var(--norway-blue)] bg-white p-5 shadow-sm"
-                >
+                <div key={faq.question}>
                   <dt className="font-semibold text-slate-900">{faq.question}</dt>
-                  <dd className="mt-2 leading-7 text-slate-700">{faq.answer}</dd>
+                  <dd className="mt-2 text-sm leading-6 text-slate-600">
+                    {faq.answer}
+                  </dd>
                 </div>
               ))}
             </dl>
           </div>
         </section>
 
-        <section className="border-t bg-navy text-white">
-          <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 sm:py-16">
-            <h2 className="text-2xl font-bold sm:text-3xl">
-              Plan your Eidfjord port day with confidence
+        <section className="bg-navy py-14 text-white sm:py-16">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+            <h2 className="font-display text-2xl font-semibold sm:text-3xl">
+              Eidfjord planning concierge
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85 sm:text-lg">
-              Browse shore excursions, read the port guide, and use the Cruise
-              Smart Planner — everything built for cruise passengers who need
-              to return on time.
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-white/80 sm:text-base">
+              {siteConfig.contactEmailVerified
+                ? `Questions about shaping an Eidfjord port day? Email ${siteConfig.contactEmail}.`
+                : "A destination email is being prepared. Until then, use the schedule, one-day guide and excursion pages on this site."}
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <Link href={siteConfig.shoreExcursionsPath} className="btn-primary sm:text-base">
-                Book a Tour
-              </Link>
-              <Link href="/eidfjord-port-guide" className="btn-secondary sm:text-base">
-                Eidfjord Port Guide
-              </Link>
-            </div>
+            <Link href="/contact" className="btn-primary mt-6">
+              Contact
+            </Link>
           </div>
         </section>
       </main>

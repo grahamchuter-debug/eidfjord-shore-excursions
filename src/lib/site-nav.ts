@@ -1,6 +1,6 @@
 export const siteNavLinks = [
   { label: "Excursions", href: "/excursions" },
-  { label: "Port Guide", href: "/eidfjord-port-guide" },
-  { label: "One Day", href: "/one-day-in-eidfjord" },
-  { label: "Worth Visiting?", href: "/is-eidfjord-worth-visiting" },
+  { label: "Plan your day", href: "/one-day-in-eidfjord" },
+  { label: "Ship schedule", href: "/ship-schedule" },
+  { label: "Port guide", href: "/eidfjord-port-guide" },
 ] as const;
