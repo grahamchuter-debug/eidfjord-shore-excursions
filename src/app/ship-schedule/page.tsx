@@ -59,8 +59,9 @@ export default function ShipScheduleHubPage() {
         <p className="mt-4 text-base leading-7 text-slate-700">
           This local timetable is filtered from the Norway Shore Excursions master
           schedule: {eidfjordScheduleIntegrity.total} Eidfjord calls,{" "}
-          {eidfjordScheduleIntegrity.byYear["2026"] ?? 0} in 2026 and{" "}
-          {eidfjordScheduleIntegrity.byYear["2027"] ?? 0} in 2027, across{" "}
+          {eidfjordScheduleIntegrity.byYear["2026"] ?? 0} in 2026,{" "}
+          {eidfjordScheduleIntegrity.byYear["2027"] ?? 0} in 2027 and{" "}
+          {eidfjordScheduleIntegrity.byYear["2028"] ?? 0} in 2028, across{" "}
           {eidfjordScheduleIntegrity.uniqueShips} ships.
         </p>
       </section>

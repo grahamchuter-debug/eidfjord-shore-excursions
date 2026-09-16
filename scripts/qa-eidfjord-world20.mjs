@@ -28,12 +28,13 @@ const rows = data.rows || [];
 const integrity = data.integrity || {};
 
 const expected = {
-  total: 85,
+  total: 117,
   y2026: 51,
   y2027: 34,
+  y2028: 32,
   first: "2026-06-01",
-  last: "2027-11-01",
-  ships: 33,
+  last: "2028-10-26",
+  ships: 35,
   lines: 15,
 };
 
@@ -79,10 +80,10 @@ if (integrity.cruiseLines !== expected.lines) {
   pass(`cruise lines ${expected.lines}`);
 }
 
-if (integrity.has2028 || rows.some((r) => String(r.arrival_date).startsWith("2028"))) {
-  fail("2028 schedule data present");
+if ((integrity.byYear?.["2028"] ?? 0) !== 32 || !integrity.has2028) {
+  fail(`2028 ${integrity.byYear?.["2028"]}, expected 32`);
 } else {
-  pass("no 2028 schedule data");
+  pass(`2028 calls 32`);
 }
 
 const required = [
@@ -196,8 +197,8 @@ if (!sitemapSrc.includes("getSiteRoutes")) {
 }
 
 const monthKeys = [...new Set(rows.map((r) => r.arrival_date.slice(0, 7)))].sort();
-if (monthKeys.length !== 13) {
-  fail(`populated months ${monthKeys.length}, expected 13`);
+if (monthKeys.length !== 21) {
+  fail(`populated months ${monthKeys.length}, expected 21`);
 } else {
   pass("13 populated Eidfjord months");
 }
